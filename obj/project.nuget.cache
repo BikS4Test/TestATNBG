@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DhGWFjqBSwg=",
+  "dgSpecHash": "riRCQElSZSA=",
   "success": true,
-  "projectFilePath": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
+  "projectFilePath": "c:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\giorg\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.6\\microsoft.aspnetcore.openapi.8.0.6.nupkg.sha512",
     "C:\\Users\\giorg\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",

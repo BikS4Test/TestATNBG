@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj": {}
+    "c:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj": {}
   },
   "projects": {
-    "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj": {
+    "c:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
+        "projectUniqueName": "c:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
         "projectName": "ProjectName",
-        "projectPath": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
+        "projectPath": "c:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
         "packagesPath": "C:\\Users\\giorg\\.nuget\\packages\\",
-        "outputPath": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\obj\\",
+        "outputPath": "c:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\giorg\\AppData\\Roaming\\NuGet\\NuGet.Config"
