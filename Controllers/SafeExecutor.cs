@@ -14,38 +14,47 @@ namespace ProjectName.Controllers
             {
                 return await action();
             }
-            catch (BusinessException ex)
+            catch (BusinessException bex)
             {
-                return new OkObjectResult(new
+                return new ObjectResult(new
                 {
                     exception = new
                     {
-                        code = ex.Code,
-                        description = ex.Description
+                        code = bex.Code,
+                        description = bex.Description
                     }
-                });
+                })
+                {
+                    StatusCode = 200
+                };
             }
-            catch (TechnicalException ex)
+            catch (TechnicalException tex)
             {
-                return new OkObjectResult(new
+                return new ObjectResult(new
                 {
                     exception = new
-                    {
-                        code = ex.Code,
-                        description = ex.Description
+                   {
+                        code = tex.Code,
+                        description = tex.Description
                     }
-                });
+                })
+                {
+                    StatusCode = 200
+                };
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return new OkObjectResult(new
+                return new ObjectResult(new
                 {
                     exception = new
                     {
                         code = "1001",
                         description = "A technical exception has occurred, please contact your system administrator"
                     }
-                });
+                })
+                {
+                    StatusCode = 200
+                };
             }
         }
     }
