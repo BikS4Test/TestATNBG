@@ -1,9 +1,8 @@
 
 namespace ProjectName.Types
 {
-    public class BlogCategory
+    public class CreateBlogCategoryDto
     {
-        public Guid Id { get; set; }
         public Guid? Parent { get; set; }
         public string Name { get; set; }
     }
