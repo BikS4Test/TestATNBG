@@ -460,24 +460,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\giorg\\.nuget\\packages\\": {}
+    "C:\\Users\\biks\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
+      "projectUniqueName": "C:\\Work\\AIProjects\\autocode\\tempcode\\ProjectName\\ProjectName.csproj",
       "projectName": "ProjectName",
-      "projectPath": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\ProjectName.csproj",
-      "packagesPath": "C:\\Users\\giorg\\.nuget\\packages\\",
-      "outputPath": "C:\\Work\\AI Projects\\AutoCode\\tempcode\\ProjectName\\obj\\",
+      "projectPath": "C:\\Work\\AIProjects\\autocode\\tempcode\\ProjectName\\ProjectName.csproj",
+      "packagesPath": "C:\\Users\\biks\\.nuget\\packages\\",
+      "outputPath": "C:\\Work\\AIProjects\\autocode\\tempcode\\ProjectName\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\giorg\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\biks\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
