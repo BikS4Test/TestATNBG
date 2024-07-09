@@ -108,7 +108,7 @@ namespace ProjectName.Services
         public async Task<string> UpdateChangeLog(UpdateChangeLogDto request)
         {
             // Step 1: Validate the request payload
-            if (request.Id == Guid.Empty || string.IsNullOrEmpty(request.Title) || string.IsNullOrEmpty(request.Notes) || request.ProductId == Guid.Empty || request.ReleaseDate == default || request.Version == null || request.ChangedUser == Guid.Empty)
+            if (request.Id == Guid.Empty || string.IsNullOrEmpty(request.Title) || string.IsNullOrEmpty(request.Notes) || request.ProductId == Guid.Empty || request.ReleaseDate == default || request.ChangedUser == Guid.Empty)
             {
                 throw new BusinessException("DP-422", "Client Error");
             }
@@ -133,7 +133,7 @@ namespace ProjectName.Services
             // Step 4: Save the updated ChangeLog object to the database
             const string updateSql = @"
                 UPDATE ChangeLogs 
-                SET Title = @Title, Notes = @Notes, ProductId = @ProductId, ReleaseDate = @ReleaseDate, Version = @Version, Changed = @Changed, ChangedUser = @ChangedUser 
+                SET Title = @Title, Notes = @Notes, ProductId = @ProductId, ReleaseDate = @ReleaseDate, Version = @Version, Changed = @Changed, ChangedUser = @ChangedUser
                 WHERE Id = @Id";
 
             try
@@ -182,7 +182,7 @@ namespace ProjectName.Services
             // Step 1: Validate the request payload
             if (request.PageLimit <= 0 || request.PageOffset < 0)
             {
-                throw new BusinessException("DP-422", "Client Error");
+                throw new TechnicalException("DP-422", "Technical Error");
             }
 
             // Step 2: Query the database to fetch the list of ChangeLogs

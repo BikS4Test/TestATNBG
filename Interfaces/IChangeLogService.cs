@@ -14,7 +14,7 @@ namespace ProjectName.Interfaces
         /// Creates a new change log entry.
         /// </summary>
         /// <param name="createChangeLogDto">The data transfer object containing the information for the new change log entry.</param>
-        /// <returns>A string representing the unique identifier of the newly created change log entry.</returns>
+        /// <returns>A string representing the identifier of the newly created change log entry.</returns>
         Task<string> CreateChangeLog(CreateChangeLogDto createChangeLogDto);
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace ProjectName.Interfaces
         /// Updates an existing change log entry.
         /// </summary>
         /// <param name="updateChangeLogDto">The data transfer object containing the updated information for the change log entry.</param>
-        /// <returns>A string representing the unique identifier of the updated change log entry.</returns>
+        /// <returns>A string representing the identifier of the updated change log entry.</returns>
         Task<string> UpdateChangeLog(UpdateChangeLogDto updateChangeLogDto);
 
         /// <summary>
