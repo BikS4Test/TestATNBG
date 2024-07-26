@@ -1,5 +1,4 @@
 
-// CreateAppTagDto.cs
 namespace ProjectName.Types
 {
     public class CreateAppTagDto
