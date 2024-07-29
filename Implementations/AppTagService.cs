@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
-using ProjectName.Interfaces;
 using ProjectName.Types;
+using ProjectName.Interfaces;
 using ProjectName.ControllersExceptions;
 
 namespace ProjectName.Services
@@ -32,19 +33,21 @@ namespace ProjectName.Services
                 Name = request.Name,
                 Created = DateTime.UtcNow,
                 Changed = DateTime.UtcNow,
-                CreatorId = Guid.NewGuid(), // Assuming a creator ID is needed and generated here
-                ChangedUser = Guid.NewGuid() // Assuming a changed user ID is needed and generated here
+                CreatorId = Guid.NewGuid(), // Assuming a method to get the creator ID
+                ChangedUser = Guid.NewGuid() // Assuming a method to get the changed user ID
             };
 
-            const string sql = "INSERT INTO AppTags (Id, Name, Created, Changed, CreatorId, ChangedUser) VALUES (@Id, @Name, @Created, @Changed, @CreatorId, @ChangedUser)";
+            const string sql = @"INSERT INTO AppTags (Id, Name, Created, Changed, CreatorId, ChangedUser) VALUES (@Id, @Name, @Created, @Changed, @CreatorId, @ChangedUser)";
             var affectedRows = await _dbConnection.ExecuteAsync(sql, appTag);
 
-            if (affectedRows == 0)
+            if (affectedRows > 0)
+            {
+                return appTag.Id.ToString();
+            }
+            else
             {
                 throw new TechnicalException("DP-500", "Technical Error");
             }
-
-            return appTag.Id.ToString();
         }
 
         public async Task<AppTag> GetAppTag(AppTagRequestDto request)
@@ -54,15 +57,17 @@ namespace ProjectName.Services
                 throw new BusinessException("DP-422", "Client Error");
             }
 
-            const string sql = "SELECT * FROM AppTags WHERE Id = @Id";
+            const string sql = @"SELECT * FROM AppTags WHERE Id = @Id";
             var appTag = await _dbConnection.QuerySingleOrDefaultAsync<AppTag>(sql, new { request.Id });
 
-            if (appTag == null)
+            if (appTag != null)
+            {
+                return appTag;
+            }
+            else
             {
                 throw new TechnicalException("DP-404", "Technical Error");
             }
-
-            return appTag;
         }
 
         public async Task<string> UpdateAppTag(UpdateAppTagDto request)
@@ -72,7 +77,7 @@ namespace ProjectName.Services
                 throw new BusinessException("DP-422", "Client Error");
             }
 
-            const string selectSql = "SELECT * FROM AppTags WHERE Id = @Id";
+            const string selectSql = @"SELECT * FROM AppTags WHERE Id = @Id";
             var existingAppTag = await _dbConnection.QuerySingleOrDefaultAsync<AppTag>(selectSql, new { request.Id });
 
             if (existingAppTag == null)
@@ -83,25 +88,27 @@ namespace ProjectName.Services
             existingAppTag.Name = request.Name;
             existingAppTag.Changed = DateTime.UtcNow;
 
-            const string updateSql = "UPDATE AppTags SET Name = @Name, Changed = @Changed WHERE Id = @Id";
+            const string updateSql = @"UPDATE AppTags SET Name = @Name, Changed = @Changed WHERE Id = @Id";
             var affectedRows = await _dbConnection.ExecuteAsync(updateSql, existingAppTag);
 
-            if (affectedRows == 0)
+            if (affectedRows > 0)
+            {
+                return existingAppTag.Id.ToString();
+            }
+            else
             {
                 throw new TechnicalException("DP-500", "Technical Error");
             }
-
-            return existingAppTag.Id.ToString();
         }
 
-        public async Task<bool> DeleteAppTag(DeleteAppTagDto request)
+        public async Task<string> DeleteAppTag(DeleteAppTagDto request)
         {
             if (request.Id == Guid.Empty)
             {
                 throw new BusinessException("DP-422", "Client Error");
             }
 
-            const string selectSql = "SELECT * FROM AppTags WHERE Id = @Id";
+            const string selectSql = @"SELECT * FROM AppTags WHERE Id = @Id";
             var existingAppTag = await _dbConnection.QuerySingleOrDefaultAsync<AppTag>(selectSql, new { request.Id });
 
             if (existingAppTag == null)
@@ -109,15 +116,17 @@ namespace ProjectName.Services
                 throw new TechnicalException("DP-404", "Technical Error");
             }
 
-            const string deleteSql = "DELETE FROM AppTags WHERE Id = @Id";
+            const string deleteSql = @"DELETE FROM AppTags WHERE Id = @Id";
             var affectedRows = await _dbConnection.ExecuteAsync(deleteSql, new { request.Id });
 
-            if (affectedRows == 0)
+            if (affectedRows > 0)
+            {
+                return "true";
+            }
+            else
             {
                 throw new TechnicalException("DP-500", "Technical Error");
             }
-
-            return true;
         }
 
         public async Task<List<AppTag>> GetListAppTag(ListAppTagRequestDto request)
@@ -127,7 +136,7 @@ namespace ProjectName.Services
                 throw new BusinessException("DP-422", "Client Error");
             }
 
-            var sql = "SELECT * FROM AppTags";
+            var sql = @"SELECT * FROM AppTags";
 
             if (!string.IsNullOrEmpty(request.SortField) && !string.IsNullOrEmpty(request.SortOrder))
             {
@@ -138,7 +147,14 @@ namespace ProjectName.Services
 
             var appTags = await _dbConnection.QueryAsync<AppTag>(sql, new { request.PageOffset, request.PageLimit });
 
-            return appTags.AsList();
+            if (appTags != null)
+            {
+                return appTags.ToList();
+            }
+            else
+            {
+                throw new TechnicalException("DP-500", "Technical Error");
+            }
         }
     }
 }
