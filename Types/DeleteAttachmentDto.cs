@@ -1,4 +1,4 @@
-
+// File: DeleteAttachmentDto.cs
 namespace ProjectName.Types
 {
     public class DeleteAttachmentDto
