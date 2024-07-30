@@ -1,10 +1,9 @@
-
+// File: UpdateAppStatusDto.cs
 namespace ProjectName.Types
 {
-    public class UpdateApiTagDto
+    public class UpdateAppStatusDto
     {
         public Guid? Id { get; set; }
         public string? Name { get; set; }
-        public Guid ChangedUser { get; set; }
     }
 }

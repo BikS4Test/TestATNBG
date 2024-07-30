@@ -1,7 +1,7 @@
-
+// File: AppStatusRequestDto.cs
 namespace ProjectName.Types
 {
-    public class AppTagRequestDto
+    public class AppStatusRequestDto
     {
         public Guid Id { get; set; }
     }

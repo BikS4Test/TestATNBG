@@ -1,7 +1,7 @@
-
+// File: CreateAppStatusDto.cs
 namespace ProjectName.Types
 {
-    public class CreateAppTagDto
+    public class CreateAppStatusDto
     {
         public string Name { get; set; }
     }

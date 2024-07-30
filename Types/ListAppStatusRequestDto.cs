@@ -1,7 +1,7 @@
-
+// File: ListAppStatusRequestDto.cs
 namespace ProjectName.Types
 {
-    public class ListBlogCategoryRequestDto
+    public class ListAppStatusRequestDto
     {
         public int PageLimit { get; set; }
         public int PageOffset { get; set; }

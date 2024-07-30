@@ -1,7 +1,7 @@
-
+// File: DeleteAppStatusDto.cs
 namespace ProjectName.Types
 {
-    public class DeleteApiTagDto
+    public class DeleteAppStatusDto
     {
         public Guid Id { get; set; }
     }
