@@ -1,11 +1,10 @@
-// File: Subscription.cs
+// File: Environment.cs
 namespace ProjectName.Types
 {
-    public class Subscription
+    public class Environment
     {
         public Guid? Id { get; set; }
-        public Guid? ProductsId { get; set; }
-        public Guid? ApplicationsId { get; set; }
+        public string? Name { get; set; }
         public int? Version { get; set; }
         public DateTime? Created { get; set; }
         public DateTime? Changed { get; set; }

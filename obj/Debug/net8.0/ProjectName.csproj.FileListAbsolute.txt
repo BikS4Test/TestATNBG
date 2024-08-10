@@ -1,0 +1,8 @@
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.csproj.AssemblyReference.cache
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.GeneratedMSBuildEditorConfig.editorconfig
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.AssemblyInfoInputs.cache
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.AssemblyInfo.cs
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.csproj.CoreCompileInputs.cache
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.MvcApplicationPartsAssemblyInfo.cs
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.MvcApplicationPartsAssemblyInfo.cache
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.sourcelink.json
