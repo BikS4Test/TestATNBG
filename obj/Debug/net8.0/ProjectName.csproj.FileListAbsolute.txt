@@ -6,3 +6,5 @@
 /Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.MvcApplicationPartsAssemblyInfo.cs
 /Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.MvcApplicationPartsAssemblyInfo.cache
 /Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.sourcelink.json
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.RazorAssemblyInfo.cache
+/Users/giorgosmarinos/aiwork/AutoCode/tempcode/ProjectName/obj/Debug/net8.0/ProjectName.RazorAssemblyInfo.cs
